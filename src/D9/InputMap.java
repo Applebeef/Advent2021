@@ -54,10 +54,10 @@ public class InputMap {
     }
 
     public int getPointFromArr(Point point) {
-        if (point.getY() >= arr.length || point.getY() < 0 || point.getX() >= arr[point.getY()].length || point.getX() < 0) {
+        if (point.getY() >= arr.length || point.getY() < 0 || point.getX() >= arr[(int) point.getY()].length || point.getX() < 0) {
             return 9;
         }
-        return arr[point.getY()][point.getX()];
+        return arr[(int) point.getY()][(int) point.getX()];
     }
 
     public Set<Set<Point>> findBasins(Set<Point> setOfMinimumPoints) {

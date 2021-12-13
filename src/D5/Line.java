@@ -46,7 +46,7 @@ public class Line {
             bigger = getP2();
         }
 
-        IntStream range = IntStream.range(smaller.getY(), bigger.getY() + 1);
+        IntStream range = IntStream.range((int) smaller.getY(), (int) bigger.getY() + 1);
         range.forEach(i -> pointList.add(new Point(bigger.getX(), i)));
         return pointList;
     }
@@ -68,10 +68,10 @@ public class Line {
     }
 
     public int getSlope() {
-        return (p1.getY() - p2.getY()) / ((p1.getX()) - p2.getX());
+        return (int) ((p1.getY() - p2.getY()) / ((p1.getX()) - p2.getX()));
     }
 
     public int getXDifference() {
-        return Math.abs(p1.getX() - p2.getX());
+        return (int) Math.abs(p1.getX() - p2.getX());
     }
 }

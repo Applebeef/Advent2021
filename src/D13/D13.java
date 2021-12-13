@@ -17,7 +17,7 @@ public class D13 {
         Scanner pointsScanner = new Scanner(points);
         Scanner foldsScanner = new Scanner(folds);
         List<Point> pointList = new ArrayList<>();
-        List<Pair<String, Integer>> foldList = new ArrayList<>();
+        List<Pair<String, Long>> foldList = new ArrayList<>();
 
         while (pointsScanner.hasNextLine()) {
             String[] point = pointsScanner.nextLine().trim().split(",");
@@ -25,7 +25,7 @@ public class D13 {
         }
         while (foldsScanner.hasNextLine()) {
             String[] fold = foldsScanner.nextLine().trim().split(" ")[2].split("=");
-            foldList.add(new Pair<>(fold[0], Integer.parseInt(fold[1])));
+            foldList.add(new Pair<>(fold[0], Long.parseLong(fold[1])));
         }
         Paper paper = new Paper(pointList, foldList);
         int res = paper.fold(1);
@@ -36,7 +36,7 @@ public class D13 {
         Scanner pointsScanner = new Scanner(points);
         Scanner foldsScanner = new Scanner(folds);
         List<Point> pointList = new ArrayList<>();
-        List<Pair<String, Integer>> foldList = new ArrayList<>();
+        List<Pair<String, Long>> foldList = new ArrayList<>();
 
         while (pointsScanner.hasNextLine()) {
             String[] point = pointsScanner.nextLine().trim().split(",");
@@ -44,7 +44,7 @@ public class D13 {
         }
         while (foldsScanner.hasNextLine()) {
             String[] fold = foldsScanner.nextLine().trim().split(" ")[2].split("=");
-            foldList.add(new Pair<>(fold[0], Integer.parseInt(fold[1])));
+            foldList.add(new Pair<>(fold[0], Long.parseLong(fold[1])));
         }
         Paper paper = new Paper(pointList, foldList);
         paper.fold(foldList.size());
