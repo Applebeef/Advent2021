@@ -40,6 +40,9 @@ public class D6 {
         String str = scanner.nextLine();
         Arrays.stream(str.split(",")).mapToInt(Integer::parseInt).forEach(age -> fishBuckets[age]++);
 
+        final int NEW_BORN_FISH_AGE = 8;
+        final int AFTER_BIRTH_FISH_AGE = 6;
+
         long amount;
         for (int i = 0; i < days; i++) {
             for (int j = tempFishBuckets.length - 1; j >= 0; j--) {
@@ -48,8 +51,8 @@ public class D6 {
                 if (j != 0) {
                     tempFishBuckets[j - 1] += amount;
                 } else {
-                    tempFishBuckets[6] += amount;
-                    tempFishBuckets[8] += amount;
+                    tempFishBuckets[AFTER_BIRTH_FISH_AGE] += amount;
+                    tempFishBuckets[NEW_BORN_FISH_AGE] += amount;
                 }
             }
             System.arraycopy(tempFishBuckets, 0, fishBuckets, 0, tempFishBuckets.length);
