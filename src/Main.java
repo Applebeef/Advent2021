@@ -34,7 +34,7 @@ public class Main {
         D13 d13 = new D13();
         D14 d14 = new D14();
         try {
-            System.out.println(d14.Solve2(10));
+            System.out.println(d14.Solve2(40));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

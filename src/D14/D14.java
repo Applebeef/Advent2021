@@ -65,7 +65,12 @@ public class D14 {
         Map<String, Long> duoCount = new HashMap<>();
         for (int i = 0; i < polymer.length(); i++) {
             if (i < polymer.length() - 1) {
-                duoCount.put(polymer.substring(i, i + 2), 1L);
+                String temp = polymer.substring(i, i + 2);
+                if (duoCount.containsKey(temp)) {
+                    duoCount.put(temp, duoCount.get(temp) + 1);
+                } else {
+                    duoCount.put(temp, 1L);
+                }
             }
 
             String singleChar = polymer.substring(i, i + 1);
