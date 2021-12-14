@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 public class D6 {
     private final File file = new File("C:\\Users\\oroth\\IdeaProjects\\Advent\\src\\D6\\input");
 
-    //Fish are dumb
     public int Solve1() throws FileNotFoundException {
         Scanner scanner = new Scanner(file);
         String str = scanner.nextLine();
