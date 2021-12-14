@@ -1,7 +1,7 @@
 package D13;
 
 import D4.Pair;
-import D5.Point;
+import Util.Point;
 
 import java.io.File;
 import java.io.FileNotFoundException;

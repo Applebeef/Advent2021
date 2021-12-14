@@ -1,7 +1,5 @@
 package D9;
 
-import D5.Point;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;

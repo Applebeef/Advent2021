@@ -1,6 +1,6 @@
 package D9;
 
-import D5.Point;
+import Util.Point;
 
 public enum Sides {
     UP(-1, 0) {

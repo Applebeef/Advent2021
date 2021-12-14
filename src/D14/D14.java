@@ -1,5 +1,7 @@
 package D14;
 
+import Util.countingMap;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -61,46 +63,34 @@ public class D14 {
             String[] split = scanner.nextLine().trim().split(" -> ");
             polymerInsertionMap.put(split[0], split[1]);
         }
-        Map<String, Long> charCount = new HashMap<>();
-        Map<String, Long> duoCount = new HashMap<>();
+        countingMap<String> charCount = new countingMap<>(1);
+        countingMap<String> duoCount = new countingMap<>(1);
         for (int i = 0; i < polymer.length(); i++) {
             if (i < polymer.length() - 1) {
                 String temp = polymer.substring(i, i + 2);
-                if (duoCount.containsKey(temp)) {
-                    duoCount.put(temp, duoCount.get(temp) + 1);
-                } else {
-                    duoCount.put(temp, 1L);
-                }
+                duoCount.addTo(temp, 1L);
             }
 
             String singleChar = polymer.substring(i, i + 1);
-            if (charCount.containsKey(singleChar)) {
-                charCount.put(singleChar, charCount.get(singleChar) + 1);
-            } else {
-                charCount.put(singleChar, 1L);
-            }
+            charCount.addTo(singleChar, 1L);
         }
-
+        duoCount.setDefaultValue(0L);
         for (int i = 0; i < steps; i++) {
-            Map<String, Long> duoChange = new HashMap<>();
+            countingMap<String> duoChange = new countingMap<>();
             for (String str : polymerInsertionMap.keySet()) {
-                duoChange.put(str, 0L);
+                duoChange.put(str);
             }
 
             for (Map.Entry<String, Long> entry : duoCount.entrySet()) {
                 long amount = entry.getValue();
-                duoCount.put(entry.getKey(), 0L);
+                duoCount.put(entry.getKey());
                 String insert = polymerInsertionMap.get(entry.getKey());
                 String res1, res2;
                 res1 = entry.getKey().substring(0, 1);
                 res2 = entry.getKey().substring(1, 2);
-                duoChange.put(res1 + insert, duoChange.get(res1 + insert) + amount);
-                duoChange.put(insert + res2, duoChange.get(insert + res2) + amount);
-                if (charCount.containsKey(insert)) {
-                    charCount.put(insert, charCount.get(insert) + amount);
-                } else {
-                    charCount.put(insert, amount);
-                }
+                duoChange.addTo(res1 + insert, amount);
+                duoChange.addTo(insert + res2, amount);
+                charCount.addTo(insert, amount);
             }
             duoCount.putAll(duoChange);
         }
