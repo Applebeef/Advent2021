@@ -11,7 +11,7 @@ public class D12 {
 
     public int Solve1() throws FileNotFoundException {
         Scanner scanner = new Scanner(file);
-        Graph graph = new Graph();
+        caveGraph graph = new caveGraph();
         while (scanner.hasNextLine()) {
             graph.addPath(scanner.nextLine().trim().split("-"));
         }
@@ -21,7 +21,7 @@ public class D12 {
 
     public int Solve2() throws FileNotFoundException {
         Scanner scanner = new Scanner(file);
-        Graph graph = new Graph();
+        caveGraph graph = new caveGraph();
         while (scanner.hasNextLine()) {
             graph.addPath(scanner.nextLine().trim().split("-"));
         }

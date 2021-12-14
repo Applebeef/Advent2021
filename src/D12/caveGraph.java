@@ -2,11 +2,11 @@ package D12;
 
 import java.util.*;
 
-public class Graph {
+public class caveGraph {
     private Cave start, end;
     private Map<String, Cave> caves;
 
-    public Graph() {
+    public caveGraph() {
         start = new Cave("start");
         end = new Cave("end");
         caves = new HashMap<>();
