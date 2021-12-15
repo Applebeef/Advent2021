@@ -53,6 +53,10 @@ public class Graph {
         return deltas;
     }
 
+    /**
+     * Runs the Dijkstra algorithm from the node "start" to all other nodes.
+     * The distance for each node is saved in Node.dist.
+     */
     public void dijkstra() {
         while (!priorityQueue.isEmpty()) {
             Node node = priorityQueue.poll();
