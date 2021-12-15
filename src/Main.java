@@ -4,6 +4,7 @@ import D11.D11;
 import D12.D12;
 import D13.D13;
 import D14.D14;
+import D15.D15;
 import D2.*;
 import D3.D3;
 import D4.D4;
@@ -33,8 +34,9 @@ public class Main {
         D12 d12 = new D12();
         D13 d13 = new D13();
         D14 d14 = new D14();
+        D15 d15 = new D15();
         try {
-            System.out.println(d14.Solve2(40));
+            System.out.println(d15.Solve1());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
