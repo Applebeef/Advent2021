@@ -5,6 +5,7 @@ import D12.D12;
 import D13.D13;
 import D14.D14;
 import D15.D15;
+import D16.D16;
 import D2.*;
 import D3.D3;
 import D4.D4;
@@ -17,7 +18,7 @@ import D9.D9;
 import java.io.FileNotFoundException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         D1 d1 = new D1();
         D2 d2 = new D2();
         Submarine submarine = new Submarine();
@@ -35,11 +36,9 @@ public class Main {
         D13 d13 = new D13();
         D14 d14 = new D14();
         D15 d15 = new D15();
-        try {
-            System.out.println(d15.Solve2());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        D16 d16 = new D16();
+
+        System.out.println(d16.Solve2());
     }
 }
 //
