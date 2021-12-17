@@ -6,6 +6,7 @@ import D13.D13;
 import D14.D14;
 import D15.D15;
 import D16.D16;
+import D17.D17;
 import D2.*;
 import D3.D3;
 import D4.D4;
@@ -37,8 +38,9 @@ public class Main {
         D14 d14 = new D14();
         D15 d15 = new D15();
         D16 d16 = new D16();
+        D17 d17 = new D17();
 
-        System.out.println(d16.Solve2());
+        System.out.println(d17.Solve2());
     }
 }
 //
